@@ -1,0 +1,47 @@
+<app-header [username]="authenticatedUser"></app-header>
+
+<div class="homepage-container">
+  
+  <div class="search-bar-container">
+    <div class="search-bar">
+      <input type="text" placeholder="Search by title" [(ngModel)]="searchTitle" class="form-control" />
+      <select [(ngModel)]="searchCategory" class="form-control">
+        <option value="">Select Category</option>
+        <option value="Information Technologies">Information Technologies</option>
+        <option value="Finance">Finance</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Engineering">Engineering</option>
+      </select>
+      <input type="text" placeholder="Search by company" [(ngModel)]="searchCompany" class="form-control" />
+      <button (click)="onSearchButtonClick()">Search</button>
+    </div>
+  </div>
+
+  <h3 class="title">Job Vacancies</h3>
+  
+ 
+  <div class="vacancy-list">
+    <div *ngFor="let vacancy of filteredVacancies" class="card">
+      <h4>{{ vacancy.title }}</h4>
+      <p>Category: {{ vacancy.category }}</p>
+      <p>Publish Date: {{ vacancy.publishDate }}</p>
+      <p>Status: {{ vacancy.status }}</p>
+      <div class="button-container">
+        <button (click)="navigateToDetails(vacancy.id)" class="btn btn-vacancy-details">
+          View Vacancy Details
+        </button>
+      </div>
+    </div>
+
+    <div *ngIf="filteredVacancies.length === 0" class="no-results">
+      <p>No vacancies found matching your criteria.</p>
+    </div>
+  </div>
+
+ 
+  <div class="pagination">
+    <button id="btn" (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button id="btn" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+</div>

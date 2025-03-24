@@ -1,0 +1,117 @@
+<!-- <app-header [username]="authenticatedUser"></app-header> -->
+
+<div class="flexed">
+  
+  <div class="card">
+    <h3 class="title">{{ editingIndex !== null ? 'Edit Vacancy' : 'Add New Vacancy' }}</h3>
+  
+    <form #vacancyForm="ngForm" (ngSubmit)="onSubmit(vacancyForm)">
+     
+      <div class="form-outline">
+        <input
+          type="text"
+          id="title"
+          class="form-control uniform-field"
+          placeholder="Vacancy Title"
+          name="title"
+          ngModel
+          [ngModel]="editingIndex !== null ? vacancies[editingIndex]?.title : ''"
+          required
+        />
+      </div>
+
+     
+      <div class="form-outline">
+        <select
+          id="category"
+          class="form-control uniform-field"
+          name="category"
+          ngModel
+          [ngModel]="editingIndex !== null ? vacancies[editingIndex]?.category : ''"
+          required
+        >
+          <option value="" disabled selected>Select Category</option>
+          <option value="Information Technologies">Information Technologies</option>
+          <option value="Finance">Finance</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Engineering">Engineering</option>
+        </select>
+      </div>
+
+     
+      <div class="form-outline">
+        <textarea
+          id="description"
+          class="form-control"
+          placeholder="Detailed Description"
+          rows="5"
+          name="description"
+          ngModel
+          [ngModel]="editingIndex !== null ? vacancies[editingIndex]?.description : ''"
+          required
+        ></textarea>
+      </div>
+
+     
+      <div class="form-outline date-field">
+        <label for="publish-date">Publish Date</label>
+        <input
+          type="date"
+          id="publish-date"
+          class="form-control uniform-field"
+          name="publishDate"
+          ngModel
+          [ngModel]="editingIndex !== null ? vacancies[editingIndex]?.publishDate : ''"
+          required
+        />
+      </div>
+
+    
+      <div class="form-outline date-field">
+        <label for="deadline-date">Deadline Date</label>
+        <input
+          type="date"
+          id="deadline-date"
+          class="form-control uniform-field"
+          name="deadlineDate"
+          ngModel
+          [ngModel]="editingIndex !== null ? vacancies[editingIndex]?.deadlineDate : ''"
+          required
+        />
+      </div>
+
+     
+      <button type="submit" class="btn btn-success">
+        {{ editingIndex !== null ? 'Save Changes' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+</div>
+
+
+<div class="vacancy-list">
+  <h3 class="title">Vacancies</h3>
+  <div *ngFor="let vacancy of vacancies; let i = index" class="card">
+    <h4>{{ vacancy.title }}</h4>
+    <p>Category: {{ vacancy.category }}</p>
+    <p>{{ vacancy.description }}</p>
+    <p>Publish Date: {{ vacancy.publishDate }}</p>
+    <p>Deadline: {{ vacancy.deadlineDate }}</p>
+    <p>Status: {{ vacancy.status }}</p>
+
+    
+    <button (click)="toggleVacancyStatus(i)" class="btn btn-primary">
+      {{ vacancy.status === 'enabled' ? 'Disable' : 'Enable' }}
+    </button>
+
+  
+    <button (click)="editVacancy(i)" class="btn btn-warning">
+      Edit
+    </button>
+
+   
+    <button (click)="removeVacancy(i)" class="btn btn-danger">
+      Remove
+    </button>
+  </div>
+</div>

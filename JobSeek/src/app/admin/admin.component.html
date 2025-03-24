@@ -1,0 +1,24 @@
+
+<div class="company-list">
+  <h2>Company Management</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Company Name</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let company of companies">
+        <td>{{ company.companyName }}</td>
+        <td>{{ company.status }}</td>
+        <td>
+          <button *ngIf="company.status === 'pending'" (click)="approveCompany(company.id)">Approve</button>
+          <button *ngIf="company.status === 'approved'" (click)="blockCompany(company.id)">Block</button>
+          <button *ngIf="company.status === 'blocked'" (click)="unblockCompany(company.id)">Unblock</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

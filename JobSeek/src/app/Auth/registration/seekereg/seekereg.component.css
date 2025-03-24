@@ -1,0 +1,148 @@
+
+.box {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+  }
+  
+  .form-box {
+    width: 50%;
+    height: auto;
+    background-color: #e45c60;
+    border-radius: 0px 30px 30px 0px;
+    box-shadow: 10px 10px 20px rgb(155, 153, 153);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  input {
+    width: 500px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(247, 217, 162);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  label {
+    font-size: 1.4em;
+    color: white;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    padding-top: 50px;
+    color: #71ccac;
+    text-align: center;
+  }
+  
+  .submit {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    background-color: #71ccac;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .img-div {
+    background-image: url('assets/job.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 450px;
+    height: 300px;
+  }
+  
+  .img-centered {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .img-centered p {
+    font-size: 2em;
+    color: rgb(228, 171, 66);
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+  }
+  
+  
+  @media (max-width: 960px) {
+    .box {
+      flex-direction: column; 
+      height: auto;
+      align-items: center;
+    }
+  
+    .form-box {
+      width: 80%; 
+      margin-top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 10px;
+    }
+  
+    input {
+      width: 300px; 
+    }
+  
+    .submit {
+      width: 100%; 
+    }
+  
+    .img-div {
+      width: 100%; 
+      height: 200px; 
+    }
+  
+    .img-centered p {
+      font-size: 1.4em; 
+    }
+  
+    h1 {
+      font-size: 1.8em; 
+    }
+  
+    label {
+      font-size: 1.2em; 
+    }
+  }
+  @media (min-width: 460px){
+    .img-div {
+        width: 100%; 
+        height: 300px; 
+        margin-top: 20px;
+      }
+  } 
+  @media (min-width: 768px){
+    .img-div {
+        width: 100%; 
+        height: 400px; 
+        margin-top: 20px;
+      }
+  } 
+  @media (min-width: 1024px){
+    .img-div {
+        width: 100%; 
+        width: 400px; 
+        margin-top: 20px;
+    }
+    input{
+        width: 400px;
+    }
+  } 
+ 

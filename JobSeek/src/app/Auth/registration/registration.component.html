@@ -1,0 +1,11 @@
+<div>
+  <div *ngIf="role === 'jobSeeker'">
+    <app-seekereg></app-seekereg> 
+  </div>
+  <div *ngIf="role === 'company'">
+    <app-compreg></app-compreg> 
+  </div>
+  <div *ngIf="!role">
+    <p>Select a role to register.</p>
+  </div>
+</div>

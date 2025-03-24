@@ -1,0 +1,28 @@
+  <div class="box">
+    <div class="form-box">
+      <h1>Registration</h1>
+     <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+          <label for="companyName">Company Name: </label> <br>
+          <input type="text" id="companyName" formControlName="companyName">
+          <br>
+          <label for="companyTaxId">Company Tax ID: </label> <br>
+          <input type="text" id="companyTaxId" formControlName="companyTaxId">
+          <br>
+          <label for="employeeEmail">Employee Email: </label> <br>
+          <input type="email" id="employeeEmail" formControlName="employeeEmail">
+          <br>
+          <label for="employeeName">Employee Name: </label> <br>
+          <input type="text" id="employeeName" formControlName="employeeName">
+          <br>
+          <label for="password">Password: </label> <br>
+          <input type="password" id="password" formControlName="password">
+          <br>
+          <button class="submit" type="submit" [disabled]="registrationForm.invalid">Register as Company</button>
+
+        </form>
+    </div>
+    <div class="img-centered">
+      <div class="img-div"> </div> 
+      <p>Reach Top Talent Faster—Post Here Today!</p>
+    </div>
+  </div>

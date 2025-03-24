@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #692c5f;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #d0c4ce;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .sign-out-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f164ea;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  
+  .sign-out-btn:hover {
+    background-color: #f888f8;
+  }
+  

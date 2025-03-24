@@ -1,0 +1,47 @@
+<div class="background">
+  <div class="image-1"></div>
+  <div class="main-m" [ngClass]="{'pink-background': isMainMColorChanged}">
+    <h2>{{ message }}</h2>
+
+    <div class="identifying" *ngIf="isMessageChanged">
+      <button
+        class="seeker"
+        [ngStyle]="{'border': isJobSeekerSelected ? '3px solid #eec67c' : 'none'}"
+        (click)="selectRole('jobSeeker')">
+        <h3>I am Job Seeker</h3>
+      </button>
+      <button
+        class="company"
+        [ngStyle]="{'border': isCompanySelected ? '3px solid #eec67c' : 'none'}"
+        (click)="selectRole('company')">
+        <h3>I am Company</h3>
+      </button>
+      <button
+        class="Admin"
+        [ngStyle]="{'border': isAdminSelected ? '3px solid #eec67c' : 'none'}"
+        (click)="selectRole('Admin')">
+        <h3>I am Admin</h3>
+      </button>
+    </div>
+
+    
+    <button 
+      *ngIf="isMessageChanged && selectedRole !== 'Admin'"
+      class="create-account-btn"
+      [disabled]="!isRoleSelected"
+      (click)="createAccount()">
+      Create Account
+    </button>
+
+    <button *ngIf="!isMessageChanged" (click)="changeMessage()" class="start-btn">
+      <h5>Get started</h5>
+    </button>
+
+    <div *ngIf="isRoleSelected">
+      <div class="login-acc">
+        <h4>Already have an account?</h4>
+        <h4 (click)="logIn()">Log in</h4>
+      </div>
+    </div>
+  </div>
+</div>

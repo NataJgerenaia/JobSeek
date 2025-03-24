@@ -1,0 +1,181 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flexed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.card {
+    background-color: rgb(152, 172, 240);
+    width: 800px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.title {
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(73, 89, 231);
+    margin-bottom: 20px;
+}
+
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+
+textarea {
+    height: 100px; 
+    resize: none; 
+    overflow-y: auto; 
+}
+
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: rgb(68, 65, 223);
+}
+
+
+.date-field {
+    margin-bottom: 15px;
+}
+
+
+select, #publish-date, #deadline-date {
+    cursor: pointer; 
+}
+
+
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+
+.btn-primary, .btn-success, .btn-danger {
+    background-color: #4e73df; 
+}
+
+
+.btn:hover {
+    background-color: #3e5ab0; 
+    box-shadow: 0 4px 8px rgba(78, 115, 223, 0.3); 
+}
+
+
+.btn:active {
+    background-color: #2e459c; 
+    box-shadow: 0 2px 4px rgba(78, 115, 223, 0.4); 
+}
+
+
+.vacancy-list {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 900px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.vacancy-list .card {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+.vacancy-list h4 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+.vacancy-list p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+    word-wrap: break-word; 
+    white-space: pre-wrap; 
+}
+
+
+.vacancy-list .btn {
+    margin-top: 10px;
+    width: 150px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+@keyframes slide-up {
+    0% {
+      transform: translateY(100%);  
+      opacity: 0; 
+    }
+    100% {
+      transform: translateY(0);  
+      opacity: 1;  
+    }
+  }
+  
+  
+  .slide-up {
+    animation: slide-up 0.5s ease-out;  /
+  }
+  
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 90%;
+    }
+
+    input, select, textarea {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .vacancy-list {
+        width: 90%;
+    }
+
+    .vacancy-list .card {
+        padding: 10;
+    }
+}

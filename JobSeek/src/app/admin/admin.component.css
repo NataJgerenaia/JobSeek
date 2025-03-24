@@ -1,0 +1,44 @@
+.admin-container {
+  padding: 20px;
+}
+h2{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2345a1;
+  margin-top: 20px;
+}
+table {
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: rgb(191, 203, 241);
+  width: 60%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+ tr :nth-child(3){
+  width: 100px;
+ }
+button {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #2345a1;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+button:hover {
+  background-color: #8a96da;
+}
+.company-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

@@ -1,0 +1,30 @@
+<div 
+  class="vacancy-details-container" 
+  *ngIf="vacancy" 
+  style="max-width: 600px; margin: 50px auto; padding: 20px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif; color: #333;"
+>
+  <h2 style="font-size: 1.8rem; color: #d63da8; margin-bottom: 15px;">
+    {{ vacancy.title }}
+  </h2>
+  <p style="margin: 8px 0; line-height: 1.6;">
+    <strong style="color: #555;">Category:</strong> {{ vacancy.category }}
+  </p>
+  <p style="margin: 8px 0; line-height: 1.6;">
+    <strong style="color: #555;">Description:</strong> {{ vacancy.description }}
+  </p>
+  <p style="margin: 8px 0; line-height: 1.6;">
+    <strong style="color: #555;">Publish Date:</strong> {{ vacancy.publishDate }}
+  </p>
+  <p style="margin: 8px 0; line-height: 1.6;">
+    <strong style="color: #555;">Deadline:</strong> {{ vacancy.deadlineDate }}
+  </p>
+</div>
+
+
+<div 
+  *ngIf="!vacancy" 
+  class="no-details" 
+  style="max-width: 600px; margin: 50px auto; padding: 20px; text-align: center; color: #ff5722; font-size: 1.2rem; font-family: Arial, sans-serif;"
+>
+  <p>Vacancy not found.</p>
+</div>
